@@ -1111,55 +1111,114 @@
 }
 
 
-/*address with map*/
-
-.footer-map-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f8f9fa; /* light background for contrast */
-    padding: 40px 20px;
-    gap: 30px;
+/* Footer General */
+footer {
+    background-color: #060ca8; /* Dark Blue */
+    color: #fff;
+    padding: 50px 20px 30px;
     font-family: 'Poppins', sans-serif;
-    border-top: 2px solid #ddd;
 }
 
-.footer-map-container h3,
-.footer-map-container h4 {
-    color: #333;
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+    color: #00bfff; /* Sky blue on hover */
+    transform: translateY(-2px);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1 1 220px;
+    min-width: 220px;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #1a2d59; /* Slightly lighter blue */
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    background: linear-gradient(45deg, #00bfff, #1e90ff);
+    color: #fff;
+}
+
+/* Quick Links & Resources */
+.footer-links ul,
+.resources ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.resources li {
     margin-bottom: 10px;
-    text-align: center;
+    transition: transform 0.3s;
 }
 
-.info-text p {
-    color: #555;
-    text-align: center;
-    line-height: 1.6;
-    font-size: 16px;
+.footer-links li:hover,
+.resources li:hover {
+    transform: translateX(5px);
 }
 
-.map-wrapper {
-    width: 100%;
-    max-width: 800px; /* maximum width for large screens */
+/* Resources + Map Container */
+.resources-map {
+    display: flex;
+    flex: 1 1 400px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.map-responsive {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+.resources-map .resources {
+    flex: 1 1 150px;
+}
+
+.resources-map .map-container {
+    flex: 1 1 200px;
+    border-radius: 10px;
     overflow: hidden;
-    border-radius: 12px; /* rounded corners for elegance */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* subtle shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-.map-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid #401077;
+    font-size: 0.9rem;
+    color: #ccc;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-content,
+    .resources-map {
+        flex-directio
+
 
 /* Small devices (mobiles) */
 @media (max-width: 600px) {
@@ -1719,63 +1778,67 @@ Order BOTH Designs together
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+   <!-- Footer -->
+<footer>
+    <div class="footer-content">
 
-         <!-- Footer Map Section -->
-            <div class="footer-map">
+        <!-- ITSA Info Section -->
+        <div class="footer-section about-itsa">
+            <h3>ITSA</h3>
+            <p>Information Technology Student Association - Empowering the next generation of IT professionals.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1GUsfvRPjb/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-threads"></i></a>
+                <a href="https://www.instagram.com/itsa_uok?igsh=MXBqang2N2x5cTAzdQ=="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/itsauok/posts/?feedView=all"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#board">Board of Officials</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Resources + Map Section (Side by Side) -->
+        <div class="footer-section resources-map">
+            <div class="resources">
+                <h3>Resources</h3>
+                <ul>
+                    <li><p>Membership</p></li>
+                    <li><p>Newsletter</p></li>
+                    <li><p>Gallery</p></li>
+                    <li><p>Blog</p></li>
+                    <li><p>FAQs</p></li>
+                </ul>
+            </div>
+            <div class="map-container">
                 <h3>Our Location</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.334235154226!2d79.90029477565577!3d6.96983839987284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25981ae4d0dd7%3A0xc61b6f912200f5b9!2sFCT%20New%20Building%20-%20University%20of%20Kelaniya!5e0!3m2!1sen!2slk!4v1770914457567!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                    width="100%" 
-                    height="250" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.334235154226!2d79.90029477565577!3d6.96983839987284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25981ae4d0dd7%3A0xc61b6f912200f5b9!2sFCT%20New%20Building%20-%20University%20of%20Kelaniya!5e0!3m2!1sen!2slk!4v1770914457567!5m2!1sen!2slk"
+                    width="100%"
+                    height="200"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-        <div class="footer-content">
-            <div class="footer-section"><br>
-                <h3>ITSA</h3>
-                <p>Information Technology Student Association - Empowering the next generation of IT professionals.</p>
-                <div class="social-links" style="justify-content: flex-start; margin-top: 1rem;">
-                    <a href="https://www.facebook.com/share/1GUsfvRPjb/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-threads"></i></a>
-                    <a href="https://www.instagram.com/itsa_uok?igsh=MXBqang2N2x5cTAzdQ=="><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/itsauok/posts/?feedView=all"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-section footer-links">
-
-                <br><h3>Quick Links</h3>
-                <ul>
-            
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#board">Board of Officials</a></li>
-                        <li><a href="#events">Events</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    
-                </ul>
-            </div>
-            <div class="footer-section footer-links">
-                <br><h3>Resources</h3>
-                <ul>
-                    <li><!--<a href="#">--><p>Membership</p></a></li>
-                    <li><!--<a href="#">--><p>Newsletter</p></a></li>
-                    <li><!--<a href="#">--><p>Gallery</p></a></li>
-                    <li><!--<a href="#">--><p>Blog</p></a></li>
-                    <li><!--<a href="#">--><p>FAQs</p></a></li>
-                </ul>
-            </div>
         </div>
 
+    </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 ITSA - Information Technology Student Association. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+        <p>&copy; 2026 ITSA - Information Technology Student Association. All rights reserved.</p>
+    </div>
+</footer>
+
 
     <!-- Back to Top Button -->
     <div class="back-to-top" onclick="scrollToTop()">
