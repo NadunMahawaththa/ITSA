@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITSA - Information Technology Student Association</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#0066CC;
+    --dark:#003D7A;
+    --light:#F4F8FF;
+    --white:#FFFFFF;
+    --text:#2C3E50;
+    --soft-blue:#E6F0FF;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.8;
+}
+
+/* NAVIGATION */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:var(--white);
+    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:1rem 2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--primary);
+    text-decoration:none;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:500;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    color:var(--dark);
+}
+
+/* ARTICLE HEADER */
+.article-header{
+    margin-top:90px;
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    background:linear-gradient(135deg,#0066CC,#003D7A);
+    color:white;
+}
+
+.category{
+    background:white;
+    color:var(--primary);
+    padding:6px 18px;
+    border-radius:30px;
+    font-size:0.8rem;
+    font-weight:600;
+    display:inline-block;
+    margin-bottom:1.5rem;
+}
+
+.article-title{
+    font-size:2.6rem;
+    margin-bottom:1.5rem;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.article-meta{
+    display:flex;
+    justify-content:center;
+    gap:2.5rem;
+    font-size:1rem;
+    margin-top:2rem;
+    margin-bottom:2.5rem;
+    opacity:0.95;
+}
+
+.article-meta span{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,0.15);
+    padding:10px 18px;
+    border-radius:30px;
+    backdrop-filter:blur(5px);
+}
+
+.article-meta i{
+    font-size:1rem;
+}
+
+.article-meta span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.article-meta i{
+    font-size:0.9rem;
+}
+
+/* ARTICLE BODY */
+.article-body{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:4rem 3rem;
+    border-radius:20px;
+    margin-top:-60px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.lead{
+    font-size:1.2rem;
+    font-weight:500;
+    margin-bottom:2rem;
+    color:var(--dark);
+}
+
+.dropcap{
+    float:left;
+    font-size:3.5rem;
+    font-weight:700;
+    line-height:1;
+    margin-right:10px;
+    color:var(--primary);
+}
+
+/* IMAGE FIGURE */
+.figure{
+    margin:3rem 0;
+    text-align:center;
+}
+
+.figure img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    border-radius:15px;
+    display:block;
+    margin:auto;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.figure img:hover{
+    transform:scale(1.02);
+}
+
+.figcaption{
+    margin-top:1rem;
+    font-size:0.9rem;
+    color:#666;
+}
+
+
+/* CTA SECTION */
+.cta-section{
+    margin-top:3rem;
+    padding:2.5rem;
+    background:var(--soft-blue);
+    border-radius:15px;
+    text-align:center;
+}
+
+.facebook-btn{
+    display:inline-block;
+    margin-top:1rem;
+    padding:12px 25px;
+    border-radius:40px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.facebook-btn:hover{
+    background:var(--dark);
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+    margin-top:4rem;
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:2rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet */
+@media(max-width:992px){
+
+.article-title{
+    font-size:2.2rem;
+}
+
+.article-body{
+    padding:3rem 2rem;
+}
+
+.img-placeholder{
+    height:280px;
+}
+
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.article-header{
+    padding:3rem 1.5rem;
+}
+
+.article-title{
+    font-size:1.8rem;
+}
+
+.article-meta{
+    flex-direction:column;
+    gap:0.5rem;
+}
+
+.article-body{
+    padding:2rem 1.5rem;
+    border-radius:15px;
+}
+
+.img-placeholder{
+    height:220px;
+}
+
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+
+.article-title{
+    font-size:1.5rem;
+}
+
+.lead{
+    font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">ITSA</a>
+        <a href="index.html#events" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Events
+        </a>
+    </div>
+</nav>
+
+<header class="article-header">
+    <h1 class="article-title">Intro'26</h1>
+    <div class="article-meta">
+        <span><i class="fa-solid fa-calendar-days"></i> November 14, 2025</span>
+        <span><i class="fa-solid fa-location-dot"></i> Faculty 8th Floor</span>
+    </div>
+</header>
+
+<article class="article-body">
+
+    <p class="lead">
+        INTRO is the official welcome programme organised by the Information Technology Student Association 
+        (ITSA) of the University of Kelaniya. It marks the very first step of an exciting university journey, offering incoming students a 
+        space to connect, explore, and feel at home within the vibrant ITSA community while smoothly transitioning into campus life.
+ 
+    </p>
+
+    <p>
+        <span class="dropcap">M</span>ore than just an event, INTRO reflects the true spirit, unity, and energy of ITSA. Every activity is thoughtfully designed to make new members feel 
+        genuinely welcomed, appreciated, and confident from the moment they arrive. As a recognised student association, ITSA focuses on building meaningful relationships, encouraging 
+        teamwork, and creating a strong sense of belonging that supports students both socially and academically throughout their university experience.
+
+    </p>
+
+    <div class="figure">
+        <img src="images\Intro2.jpeg" alt="Intro2">
+    </div>
+
+
+    <p>
+
+        The programme blends fun with purpose. Through interactive games, team challenges, ice-breaking sessions, and engaging activities, participants will not only laugh and enjoy themselves,
+         but also develop communication, leadership, and collaboration skills. It is a chance to step beyond comfort zones, discover hidden talents, form lasting friendships, and experience the
+          lively culture that defines the ITSA family.
+
+    </p>
+
+    <div class="figure">
+        <img src="images\Intro3.jpeg" alt="Intro3">
+    </div>
+
+    <p>
+       Beyond the excitement, INTRO aims to inspire students to become active and confident contributors to ITSA. By bringing everyone together in a positive and energetic environment, the event 
+       builds a foundation for creativity, responsibility, and personal growth. It encourages students to take part in future projects, leadership roles, and initiatives, shaping individuals who will
+        grow with ITSA and contribute meaningfully to the university community and beyond.
+    </p>
+
+    <div class="figure">
+        <img src="images\Intro4.jpeg" alt="Intro4">
+    </div>
+
+    <div class="cta-section">
+        <p></p>
+        <a href="https://www.facebook.com/share/1BwudbH1kE/?" target="_blank" class="facebook-btn">
+            <i class="fa-brands fa-facebook"></i>
+            Browse Intro'25 Photo Album
+        </a>
+    </div>
+
+</article>
+
+<footer>
+<p>© 2026 ITSA - Information Technology Student Association</p>
+</footer>
+
+</body>
+</html>

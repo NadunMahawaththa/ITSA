@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ITSA - Information Technology Student Association</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+/* GLOBAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --primary:#0066CC;
+    --dark:#003D7A;
+    --light:#F4F8FF;
+    --white:#FFFFFF;
+    --text:#2C3E50;
+    --soft-blue:#E6F0FF;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.8;
+}
+
+/* NAVIGATION */
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:var(--white);
+    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+    z-index:1000;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:1rem 2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--primary);
+    text-decoration:none;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:var(--primary);
+    font-weight:500;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    color:var(--dark);
+}
+
+/* ARTICLE HEADER */
+.article-header{
+    margin-top:90px;
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    background:linear-gradient(135deg,#0066CC,#003D7A);
+    color:white;
+}
+
+.category{
+    background:white;
+    color:var(--primary);
+    padding:6px 18px;
+    border-radius:30px;
+    font-size:0.8rem;
+    font-weight:600;
+    display:inline-block;
+    margin-bottom:1.5rem;
+}
+
+.article-title{
+    font-size:2.6rem;
+    margin-bottom:1.5rem;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.article-meta{
+    display:flex;
+    justify-content:center;
+    gap:2.5rem;
+    font-size:1rem;
+    margin-top:2rem;
+    margin-bottom:2.5rem;
+    opacity:0.95;
+}
+
+.article-meta span{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,0.15);
+    padding:10px 18px;
+    border-radius:30px;
+    backdrop-filter:blur(5px);
+}
+
+.article-meta i{
+    font-size:1rem;
+}
+
+.article-meta span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.article-meta i{
+    font-size:0.9rem;
+}
+
+/* ARTICLE BODY */
+.article-body{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:4rem 3rem;
+    border-radius:20px;
+    margin-top:-60px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.lead{
+    font-size:1.2rem;
+    font-weight:500;
+    margin-bottom:2rem;
+    color:var(--dark);
+}
+
+.dropcap{
+    float:left;
+    font-size:3.5rem;
+    font-weight:700;
+    line-height:1;
+    margin-right:10px;
+    color:var(--primary);
+}
+
+/* IMAGE FIGURE */
+.figure{
+    margin:3rem 0;
+    text-align:center;
+}
+
+.figure img{
+    width:100%;
+    max-width:100%;
+    height:auto;
+    border-radius:15px;
+    display:block;
+    margin:auto;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.figure img:hover{
+    transform:scale(1.02);
+}
+
+.figcaption{
+    margin-top:1rem;
+    font-size:0.9rem;
+    color:#666;
+}
+
+
+/* CTA SECTION */
+.cta-section{
+    margin-top:3rem;
+    padding:2.5rem;
+    background:var(--soft-blue);
+    border-radius:15px;
+    text-align:center;
+}
+
+.facebook-btn{
+    display:inline-block;
+    margin-top:1rem;
+    padding:12px 25px;
+    border-radius:40px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.facebook-btn:hover{
+    background:var(--dark);
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+    margin-top:4rem;
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:2rem;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet */
+@media(max-width:992px){
+
+.article-title{
+    font-size:2.2rem;
+}
+
+.article-body{
+    padding:3rem 2rem;
+}
+
+.img-placeholder{
+    height:280px;
+}
+
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+.article-header{
+    padding:3rem 1.5rem;
+}
+
+.article-title{
+    font-size:1.8rem;
+}
+
+.article-meta{
+    flex-direction:column;
+    gap:0.5rem;
+}
+
+.article-body{
+    padding:2rem 1.5rem;
+    border-radius:15px;
+}
+
+.img-placeholder{
+    height:220px;
+}
+
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+
+.article-title{
+    font-size:1.5rem;
+}
+
+.lead{
+    font-size:1rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">ITSA</a>
+        <a href="index.html#events" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Events
+        </a>
+    </div>
+</nav>
+
+<header class="article-header">
+    <h1 class="article-title">Innovista'26</h1>
+    <!--<div class="article-meta">
+       <<span><i class="fa-solid fa-calendar-days"></i> March 15, 2026</span>
+        <span><i class="fa-solid fa-location-dot"></i> Faculty 8th Floor</span>
+    </div>-->
+</header>
+
+<article class="article-body">
+
+    <p class="lead">
+        The ITSA is excited to organize an industry engagement event for students in the Software Engineering, Networking,
+         and Game & Animation pathways. This program brings an invited IT company to campus to conduct specialized
+          sessions for each pathway, helping students gain real-world exposure and professional guidance. The event focuses
+           on preparing students for the modern IT industry by connecting academic learning with practical experience. 
+    </p>
+
+    <p>
+        <span class="dropcap">T</span>his event aims to give students a clear understanding of how their chosen pathway connects 
+        to the real IT industry. Industry professionals will conduct sessions for each pathway and share insights on technologies,
+         tools, and skills required in the workplace.
+    </p>
+
+    <div class="figure">
+        <img src="images\Inovista2.jpeg" alt="Inovista2">
+    </div>
+
+
+    <p>
+
+        In addition to technical knowledge, the event will emphasize career readiness and professional development. Company representatives will
+        share insights on internship opportunities, portfolio building, teamwork, communication skills, and workplace culture. Students will have 
+        the opportunity to interact directly with professionals, ask questions, and receive guidance on career planning within their chosen pathways.
+         This interaction helps students build confidence, understand industry trends, and prepare themselves for future employment in the IT sector.
+
+    </p>
+
+    <div class="figure">
+        <img src="images\Inovista3.jpeg" alt="Inovista3">
+    </div>
+
+    <p>
+       The event also encourages collaboration and knowledge sharing among students from all three pathways.
+        By bringing Software, Networking, and Game & Animation students together on one platform, the ITSA aims to
+         create a supportive environment where students can learn from each other’s interests and skills. Such exposure
+         can inspire interdisciplinary projects, innovation, and creative problem-solving. The session will motivate students 
+         to stay updated with industry advancements, improve their technical expertise, and actively participate in future IT-related 
+         activities and workshops.
+    </p>
+
+    <div class="figure">
+        <img src="images\Inovista4.jpeg" alt="Inovista4">
+    </div>
+
+    <div class="cta-section">
+        <p></p>
+        <a href="https://www.facebook.com/share/p/1BdKYT5Ftp/?mibextid=wwXIfr" target="_blank" class="facebook-btn">
+            <i class="fa-brands fa-facebook"></i>
+            Browse Inovista'25 Photo Album
+        </a>
+    </div>
+
+</article>
+
+<footer>
+<p>© 2026 ITSA - Information Technology Student Association</p>
+</footer>
+
+</body>
+</html>
