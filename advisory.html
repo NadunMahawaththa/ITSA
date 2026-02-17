@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ================= META ================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITSA - Information Technology Student Association</title>
+
+    <!-- ================= SECURITY HEADERS ================= -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noarchive">
+
+    <!-- ================= CONTENT SECURITY POLICY ================= -->
+    <meta http-equiv="Content-Security-Policy"
+    content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+    font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+    script-src 'self' https://cdnjs.cloudflare.com;
+    img-src 'self' data:;
+    ">
+
+    <!-- ================= FONTS & ICONS ================= -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ================= STYLES ================= -->
+    <style>
+
+    /* ================= GLOBAL ================= */
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    :root{
+        --primary:#0066CC;
+        --dark:#003D7A;
+        --light:#F4F8FF;
+        --white:#FFFFFF;
+        --text:#2C3E50;
+        --soft-blue:#E6F0FF;
+    }
+
+    body{
+        font-family:'Poppins',sans-serif;
+        background:var(--light);
+        color:var(--text);
+        line-height:1.8;
+    }
+
+    /* Disable image dragging */
+    img{
+        user-select:none;
+        -webkit-user-drag:none;
+        pointer-events:none;
+    }
+
+    /* ================= NAVIGATION ================= */
+    nav{
+        position:fixed;
+        width:100%;
+        top:0;
+        background:var(--white);
+        box-shadow:0 2px 15px rgba(0,0,0,0.05);
+        z-index:1000;
+    }
+
+    .nav-container{
+        max-width:1200px;
+        margin:auto;
+        padding:1rem 2rem;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo{
+        font-size:1.6rem;
+        font-weight:700;
+        color:var(--primary);
+        text-decoration:none;
+    }
+
+    .back-btn{
+        text-decoration:none;
+        color:var(--primary);
+        font-weight:500;
+        transition:0.3s;
+    }
+
+    .back-btn:hover{
+        color:var(--dark);
+    }
+
+    /* ================= SECTION ================= */
+    .advisory-section{
+        padding:120px 8% 80px;
+        background:#ffffff;
+    }
+
+    .section-title{
+        text-align:center;
+        margin-bottom:60px;
+    }
+
+    .section-title h2{
+        font-size:40px;
+        font-weight:700;
+        color:#222;
+    }
+
+    .section-title p{
+        color:#777;
+        margin-top:10px;
+    }
+
+    /* ================= GRID ================= */
+   .advisory-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+    justify-content:center;
+}
+
+
+
+    /* ================= CARD ================= */
+    .advisor-card{
+        background:#fff;
+        border-radius:20px;
+        overflow:hidden;
+        box-shadow:0 15px 35px rgba(0,0,0,0.3);
+        transition:0.3s;
+        text-align:center;
+    }
+
+    .advisor-card:hover{
+        transform:translateY(-8px);
+    }
+
+    .advisor-img{
+        width:100%;
+        height:auto;
+        max-height:500px;
+        object-fit:contain;
+        background:#fff;
+        padding:30px;
+    }
+
+    .advisor-content{
+        padding:25px 30px 35px;
+    }
+
+    .advisor-content h2{
+        font-size:24px;
+        font-weight:600;
+        margin-bottom:5px;
+        color:#222;
+    }
+
+    .advisor-content h3{
+        font-size:22px;
+        font-weight:500;
+        color:#1e90ff;
+        margin-bottom:15px;
+    }
+
+    .advisor-content p{
+        font-size:15px;
+        color:#555;
+        line-height:1.7;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:992px){
+        .advisory-container{
+            grid-template-columns:1fr;
+        }
+    }
+
+    @media(max-width:576px){
+        .section-title h2{
+            font-size:28px;
+        }
+
+        .advisor-img{
+            height:300px;
+        }
+
+        .advisor-content{
+            padding:20px;
+        }
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+        margin-top:4rem;
+        background:var(--dark);
+        color:white;
+        text-align:center;
+        padding:2rem;
+    }
+
+    </style>
+</head>
+
+<body oncontextmenu="return false;">
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">ITSA</a>
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Site
+        </a>
+    </div>
+</nav>
+
+<!-- ================= ADVISORY SECTION ================= -->
+<section class="advisory-section">
+    
+    <div class="section-title">
+        <h2>Our Advisory Panel</h2>
+        <p>Meet our experienced advisors guiding our vision and growth.</p>
+    </div>
+
+    <div class="advisory-container">
+
+        <!-- Advisor 1 -->
+        <div class="advisor-card">
+            <img src="images/dammika.jpg" alt="dammika" class="advisor-img">
+            <div class="advisor-content">
+                <h2>Prof. K. G. H. Dhammika Weerasinghe</h2>
+                <h5>B.Sc. (Special) (Kel'ya), MSc (Oakland, USA), PhD (Oakland, USA)</h5>
+                <br><h3>Dean of the Faculty</h3>
+                <p>"The Information Technology Student Association (ITSA) proudly represents students of the Department of Software Engineering, established in December 2015 with the Faculty of Computing and Technology. Our department is committed to excellence in software engineering through innovation, knowledge sharing, and capacity building for the socio-economic development of the nation.
+
+As students of the BCS and BICT degree programmes, including specializations such as Software Systems, Games and Animation, Data Science, and Artificial Intelligence, we are part of a forward-thinking academic community. Our learning journey emphasizes teamwork, creativity, collaboration, and hands-on experience in designing real-world software solutions.
+
+ITSA serves as a platform to support your academic growth, leadership development, and technical excellence. We encourage all members to actively participate, innovate boldly, and work together to become future-ready professionals who can create high-quality, impactful, and cost-effective technology solutions.
+
+Together, let us learn, lead, and shape the future of technology."
+</p>
+            </div>
+        </div>
+
+        <!-- Advisor 2 -->
+        <div class="advisor-card">
+            <img src="images/chanaka.jpeg" alt="Chanaka" class="advisor-img">
+            <div class="advisor-content">
+                <h3>Dr. Chanaka Udayanga</h3>
+                <br><h4>Student Councilur</h4>
+                <p>"The Information Technology Student Association (ITSA) proudly represents students of the Department of Software Engineering, established in December 2015 with the Faculty of Computing and Technology. Our department is committed to excellence in software engineering through innovation, knowledge sharing, and capacity building for the socio-economic development of the nation.
+
+As students of the BCS and BICT degree programmes, including specializations such as Software Systems, Games and Animation, Data Science, and Artificial Intelligence, we are part of a forward-thinking academic community. Our learning journey emphasizes teamwork, creativity, collaboration, and hands-on experience in designing real-world software solutions.
+
+ITSA serves as a platform to support your academic growth, leadership development, and technical excellence. We encourage all members to actively participate, innovate boldly, and work together to become future-ready professionals who can create high-quality, impactful, and cost-effective technology solutions.
+
+Together, let us learn, lead, and shape the future of technology."
+</p>
+            </div>
+        </div>
+
+        <!-- Advisor 3 -->
+        <div class="advisor-card">
+            <img src="images/sadali.png" alt="sadali" class="advisor-img">
+            <div class="advisor-content">
+                <h3>Dr. S. P. Kasthuri Arachchi</h3>
+                <br><h4>Head of the Department</h4>
+                <p>"The Information Technology Student Association (ITSA) proudly represents students of the Department of Software Engineering, established in December 2015 with the Faculty of Computing and Technology. Our department is committed to excellence in software engineering through innovation, knowledge sharing, and capacity building for the socio-economic development of the nation.
+
+As students of the BCS and BICT degree programmes, including specializations such as Software Systems, Games and Animation, Data Science, and Artificial Intelligence, we are part of a forward-thinking academic community. Our learning journey emphasizes teamwork, creativity, collaboration, and hands-on experience in designing real-world software solutions.
+
+ITSA serves as a platform to support your academic growth, leadership development, and technical excellence. We encourage all members to actively participate, innovate boldly, and work together to become future-ready professionals who can create high-quality, impactful, and cost-effective technology solutions.
+
+Together, let us learn, lead, and shape the future of technology."
+</p>
+            </div>
+        </div>
+
+        
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <p>© 2026 ITSA - Information Technology Student Association</p>
+</footer>
+
+</body>
+</html>
